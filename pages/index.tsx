@@ -3,7 +3,7 @@ import check from "@/maestore";
 import type { GetStaticProps, InferGetStaticPropsType } from "next"
 
 export async function getStaticProps() {
-    const products =[1,2,3]
+    const products =[1,2,3,456023]
     return{
       props : {
         products
@@ -18,7 +18,7 @@ export default function Home( {
 
   return(
     <div>
-      Hello World
+      { products }
     </div>
   )
 }
