@@ -1,9 +1,10 @@
 import { useEffect } from "react"
 import check from "@/maestore";
+import getAllProducts from "@/framework/shopify/product/get-all-product";
 import type { GetStaticProps, InferGetStaticPropsType } from "next"
 
 export async function getStaticProps() {
-    const products =[1,2,3,456023]
+    const products = await getAllProducts()
     return{
       props : {
         products
@@ -12,13 +13,13 @@ export async function getStaticProps() {
     }
 }
 
-export default function Home( {
-  products
-}:InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home( {products}:InferGetStaticPropsType<typeof getStaticProps>) {
+
+  getAllProducts()
 
   return(
     <div>
-      { products }
+      {JSON.stringify(products) }
     </div>
   )
 }
