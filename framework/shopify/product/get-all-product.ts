@@ -1,12 +1,21 @@
 import { headers } from "next/dist/client/components/headers"
 import getAllProductsQuery from "../utils/queries/get-all-produts"
 import fetchApi from "../utils/fetch-api"
+import { ProductConnection } from "@/framework/schema"
 
+type ReturnType = {
+    products : ProductConnection
+} 
 
+const getAllProducts=async(): Promise<any> => {
+    const {data} = await fetchApi<ReturnType>({query:getAllProductsQuery})
 
-const getAllProducts=async(): Promise<any[]> => {
-    const products = await fetchApi({query:getAllProductsQuery})
-    return products.data
+    data.products.edges.map(({node: product}) => {
+        return product
+    }) ?? []
+    // normalise and return new data !
+
+    return data.products
 }
 
 export default getAllProducts
