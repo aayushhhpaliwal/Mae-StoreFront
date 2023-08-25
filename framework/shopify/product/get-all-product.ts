@@ -1,10 +1,10 @@
 import { headers } from "next/dist/client/components/headers"
 import getAllProductsQuery from "../utils/queries/get-all-produts"
 import fetchApi from "../utils/fetch-api"
-import { ProductConnection } from "@/framework/schema"
-import { normalize } from "path"
+// import { ProductConnection } from "@/framework/schema"
+import { ProductConnection } from "framework/schema"
 import { normalizeProduct } from "../utils/normalize"
-import { product } from "@/framework/common/types/product"
+import { product } from "@common/types/product";
 
 
 type ReturnType = {

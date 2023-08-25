@@ -1,6 +1,8 @@
 import { useEffect } from "react"
-import check from "@/maestore";
-import getAllProducts from "@/framework/shopify/product/get-all-product";
+// import check from "@/maestore";
+import check from "maestore";
+// import getAllProducts from "@/framework/shopify/product/get-all-product";
+import getAllProducts from "@framework/product/get-all-product";
 import type { GetStaticProps, InferGetStaticPropsType } from "next"
 
 export async function getStaticProps() {
@@ -13,11 +15,14 @@ export async function getStaticProps() {
     }
 }
 
-export default function Home( {products}:InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home( {
+      products
+    }:InferGetStaticPropsType<typeof getStaticProps>) {
 
   return(
     <div>
       {JSON.stringify(products) }
+
       
     </div>
   )
