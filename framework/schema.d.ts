@@ -4096,7 +4096,7 @@ export enum ProductCollectionSortKeys {
 }
 
 /** An auto-generated type for paginating through multiple Products. */
-export type ProductConnection = {
+export type  ProductConnection = {
   __typename?: 'ProductConnection'
   /** A list of edges. */
   edges: Array<ProductEdge>
