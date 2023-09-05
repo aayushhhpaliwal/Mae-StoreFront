@@ -1,7 +1,7 @@
 import { headers } from "next/dist/client/components/headers"
-import getAllProductsQuery from "../utils/queries/get-all-produts"
-import {fetchApi} from "../utils"
-import {normalizeProduct} from "../utils"
+// import getAllProductsQuery from "../utils/queries/get-all-produts"
+import {fetchApi, normalizeProduct , getAllProductsQuery} from "../utils"
+
 // import { ProductConnection } from "@/framework/schema"
 import { ProductConnection } from "framework/schema"
 // import { normalizeProduct } from "../utils/normalize"
