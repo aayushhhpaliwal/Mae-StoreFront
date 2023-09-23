@@ -1,7 +1,6 @@
 import { useEffect } from "react"
-// import check from "@/maestore";
 import check from "maestore";
-// import getAllProducts from "@/framework/shopify/product/get-all-product";
+
 import getAllProducts from "@framework/product/get-all-product";
 import type { GetStaticProps, InferGetStaticPropsType } from "next"
 
