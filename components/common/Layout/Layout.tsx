@@ -1,4 +1,4 @@
-import {FC} from "react"
+import {Children, FC} from "react"
 
 
 const Layout: FC = ({children}) => {
@@ -10,4 +10,4 @@ const Layout: FC = ({children}) => {
     )
 }
 
-export default Layout 
+export default Layout
