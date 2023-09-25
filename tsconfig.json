@@ -20,8 +20,10 @@
       "@common/*":["framework/common/*"], 
       "@framework":["framework/shopify"],
       "@framework/*":["framework/shopify/*"],
+      "@components/*":["components/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
+ 
