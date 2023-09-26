@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import CartDrawer from './CartDrawer';
 
 const Navbar: React.FC = () => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
+    const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false);
 
     return (
         <nav className="navbar">
-            <button className="hamburger">☰</button>
+            <button className="hamburger" onClick={() => setIsMenuDrawerOpen(true)}>☰</button>
             <div className="logo">Logo</div>
-            <button className="cart" onClick={() => setIsDrawerOpen(true)}>🛒</button>
+            <button className="cart" onClick={() => setIsCartDrawerOpen(true)}>🛒</button>
 
-            {isDrawerOpen && <CartDrawer onClose={() => setIsDrawerOpen(false)} />}
+            {isCartDrawerOpen && <CartDrawer onClose={() => setIsCartDrawerOpen(false)} />}
+            {isMenuDrawerOpen && <MenuDrawer onClose={() => setIsMenuDrawerOpen(false)} />}
             
             <style jsx>{`
                 .navbar {
@@ -32,6 +34,58 @@ const Navbar: React.FC = () => {
                 }
             `}</style>
         </nav>
+    );
+};
+
+interface DrawerProps {
+    onClose: () => void;
+}
+
+const MenuDrawer: React.FC<DrawerProps> = ({ onClose }) => {
+    return (
+        <div className="menu-drawer">
+            <button className="close-button" onClick={onClose}>X</button>
+            <a href="#">M1</a>
+            <a href="#">M2</a>
+            <a href="#">Brand Mission</a>
+            <a href="#">Material Innovation</a>
+
+            <style jsx>{`
+                .menu-drawer {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 300px;
+                    background-color: #fff;
+                    border-right: 1px solid #ccc;
+                    padding: 20px;
+                    overflow-y: auto;
+                    z-index: 1000;
+                }
+                .close-button {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    background-color: #e74c3c;
+                    color: #fff;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    font-size: 18px;
+                }
+                .menu-drawer a {
+                    display: block;
+                    margin: 15px 0;
+                    color: #333;
+                    text-decoration: none;
+                }
+                .menu-drawer a:hover {
+                    text-decoration: underline;
+                }
+            `}</style>
+        </div>
     );
 };
 

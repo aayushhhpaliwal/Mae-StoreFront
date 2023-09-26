@@ -6,12 +6,14 @@ interface CartDrawerProps {
 
 const CartDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
     return (
-        <div className="drawer">
-            Cart Contents Here
-            <button onClick={onClose}>Close</button>
-
+        <div className="cart-drawer">
+            <button className="close-button" onClick={onClose}>X</button>
+            <div className="cart-contents">
+                Cart Contents Here
+            </div>
+            
             <style jsx>{`
-                .drawer {
+                .cart-drawer {
                     position: fixed;
                     right: 0;
                     top: 0;
@@ -22,6 +24,29 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
                     padding: 20px;
                     overflow-y: auto;
                     z-index: 1000;
+                }
+
+                .close-button {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background-color: #e74c3c;
+                    color: #fff;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    font-size: 18px;
+                    line-height: 1;
+                    font-weight: bold;
+                }
+
+                .close-button:hover {
+                    background-color: #c0392b;
+                }
+
+                .cart-contents {
+                    margin-top: 20px;
                 }
             `}</style>
         </div>
