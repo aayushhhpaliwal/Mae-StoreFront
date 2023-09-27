@@ -45,10 +45,12 @@ const MenuDrawer: React.FC<DrawerProps> = ({ onClose }) => {
     return (
         <div className="menu-drawer">
             <button className="close-button" onClick={onClose}>X</button>
+            <div className='NavMenus'>
             <a href="#">M1</a>
             <a href="#">M2</a>
             <a href="#">Brand Mission</a>
             <a href="#">Material Innovation</a>
+            </div>
 
             <style jsx>{`
                 .menu-drawer {
@@ -62,6 +64,9 @@ const MenuDrawer: React.FC<DrawerProps> = ({ onClose }) => {
                     padding: 20px;
                     overflow-y: auto;
                     z-index: 1000;
+                }
+                .NavMenus{
+                    margin-top:30px;
                 }
                 .close-button {
                     position: absolute;
