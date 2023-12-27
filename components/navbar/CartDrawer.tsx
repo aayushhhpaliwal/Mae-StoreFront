@@ -46,7 +46,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
                 }
 
                 .cart-contents {
-                    margin-top: 20px;
+                    margin-top: 18px;
                 }
             `}</style>
         </div>
