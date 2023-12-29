@@ -21,7 +21,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
                     width: 300px;
                     background-color: #fff;
                     border-left: 1px solid #ccc;
-                    padding: 20px;
+                    padding: 21px;
                     overflow-y: auto;
                     z-index: 1000;
                 }
