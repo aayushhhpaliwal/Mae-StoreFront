@@ -15,7 +15,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
             <style jsx>{`
                 .cart-drawer {
                     position: fixed;
-                    right: 0;
+                    right: 1;
                     top: 0;
                     height: 100%;
                     width: 300px;
