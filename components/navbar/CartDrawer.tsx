@@ -8,7 +8,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
     return (
         <div className="cart-drawer">
             <button className="close-button" onClick={onClose}>X</button>
-            <div className="cart-contents">
+            <div className="cart-content">
                 Cart contentss He
             </div>
             
